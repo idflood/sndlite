@@ -27,14 +27,14 @@
           <label>Minimum duration:
             <select name="min_duration" id="min_duration">
             <option value="short">Short ( > 5 min )</option>
-            <option value="medium">Medium ( > 20 min )</option>
+            <option value="medium" selected="selected">Medium ( > 20 min )</option>
             <option value="long">Long ( > 40 min )</option>
             </select>
           </label>
           <label>Order by:
             <select name="order" id="order">
             <option value="time">Created at</option>
-            <option value="hotness">Hotness</option>
+            <option value="hotness" selected="selected">Hotness</option>
             </select>
           </label>
           </div>
