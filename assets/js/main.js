@@ -37,6 +37,10 @@ $(document).ready(function() {
     init_search();
     return false;
   });
+  
+  $("select").change( function(event){
+    init_search();
+  });
 });
 
 var site_ready = function () {
@@ -122,6 +126,19 @@ var load_next_page = function (){
  */
 
 var init_search = function (){
+  // get current selected duration
+  switch( $('select[name$="duration"]').val() ){
+    case "short":
+      minutes_min = 5;
+      break;
+    case "medium":
+      minutes_min = 20;
+      break;
+    case "long":
+      minutes_min = 40;
+      break;
+  }
+  
   // reset page index
   page_index = 0;
   
