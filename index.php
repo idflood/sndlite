@@ -23,16 +23,17 @@
           <div id="toggler"><a href="#">Options</a></div>
           <div class="search_options">
           <label>Minimum duration:
-          <select name="min_duration">
-          <option value="short">Short ( > 5 min )</option>
-          <option value="medium">Medium ( > 20 min )</option>
-          <option value="long">Long ( > 40 min )</option>
-          </select>
+            <select name="min_duration" id="min_duration">
+            <option value="short">Short ( > 5 min )</option>
+            <option value="medium">Medium ( > 20 min )</option>
+            <option value="long">Long ( > 40 min )</option>
+            </select>
+          </label>
           <label>Order by:
-          <select name="order">
-          <option value="time">Created at</option>
-          <option value="hotness">Hotness</option>
-          </select>
+            <select name="order" id="order">
+            <option value="time">Created at</option>
+            <option value="hotness">Hotness</option>
+            </select>
           </label>
           </div>
         </form>
