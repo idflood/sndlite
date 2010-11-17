@@ -9,6 +9,21 @@ var items_by_page = 40;
 var minutes_min = 20;
 var order_by = "hotness";
 
+$.scPlayer.defaults.onDomReady = function(){
+  $('#player').scPlayer({
+    apiKey: 'aDFM43qGZDyjYewkCkELhA'
+  });
+  scplayer = $("div.sc-player");
+};
+
+$(document).bind('onTrackDataLoaded.scPlayer', function(event){
+  //console.log(event.target, 'is ready!');
+});
+
+$(document).bind('onTrackDataLoaded.scPlayer', function(event){
+  //console.log(event.target, 'is ready!');
+});
+
 $(document).ready(function() {
   // hide some elements at start
   $("#container").css("opacity", 0);
@@ -42,6 +57,21 @@ $(document).ready(function() {
   $("select").change( function(event){
     init_search();
   });
+  
+  site_ready();
+});
+
+$(document).bind('soundcloud:onMediaEnd', function(event, data) {
+  next_track();
+});
+$(document).bind('soundcloud:onPlayerReady', function(event, data) {
+  $("#player").animate({height: "90px"}, 500);
+});
+$(document).bind('soundcloud:onPlayerError', function(event, data) {
+  if( is_ready == false ){
+    is_ready = true;
+    initSearch();
+  }
 });
 
 var site_ready = function () {
@@ -59,26 +89,17 @@ var site_ready = function () {
 }
 
 var next_track = function() {
-  // get the current and next li element
   var $current = $(".selected", "#playlist");
   var $next = $current.next();
-  
-  // if next track is available
   if( $next[0] ){
-    // remove class "selected" for all li
-    $("li.selected", "#playlist").removeClass("selected");
-    
-    // add "selected" class to next track
+    $("li", "#playlist").removeClass("selected");
     $next.addClass("selected");
-    
-    // load next track
-    var player = soundcloud.getPlayer('yourPlayerId');
-    player.api_load($("a", $next).attr("href"));
+    //var player = soundcloud.getPlayer('yourPlayerId');
+    //player.api_load($("a", $next).attr("href"));
   }else{
-    // load next page and play next item when loaded
     page_index++;
     is_waiting_next = true;
-    load_next_page();
+    loadNextPage();
   }
 }
 
@@ -107,8 +128,8 @@ var load_next_page = function (){
       // add click listener to tracks
       $("a", "#playlist ul").click(function(event){
         event.preventDefault();
-        var player = soundcloud.getPlayer('yourPlayerId');
-        player.api_load($(this).attr("href"));
+        $.scPlayer.setTrack(scplayer, $(this));
+        
         $("li", "#playlist").removeClass("selected");
         $(this).parent().addClass("selected");
         return false;

@@ -220,3 +220,13 @@ label{
 .selected{
   background: #eb956a;
 }
+
+.sc-player{
+  margin-left: 5px;
+  width: 96%;
+}
+
+.loading{
+  display: none;
+  visibility: hidden;
+}
