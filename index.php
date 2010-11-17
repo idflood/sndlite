@@ -28,6 +28,11 @@
           <option value="medium">Medium ( > 20 min )</option>
           <option value="long">Long ( > 40 min )</option>
           </select>
+          <label>Order by:
+          <select name="order">
+          <option value="time">Created at</option>
+          <option value="hotness">Hotness</option>
+          </select>
           </label>
           </div>
         </form>

@@ -7,6 +7,7 @@ var is_waiting_next = false;
 var page_index = 0;
 var items_by_page = 40;
 var minutes_min = 20;
+var order_by = "hotness";
 
 $(document).ready(function() {
   // hide some elements at start
@@ -88,7 +89,7 @@ var load_next_page = function (){
   // display the loader
   $("#loader").show(400);
   
-  $.getJSON('http://api.soundcloud.com/tracks.json?consumer_key=' + api_key + '&filter=streamable&order=hotness&limit=' + items_by_page + '&offset=' + offset + minlength + '&tags=' + $("#search input").val() +'&callback=?', function(data) {
+  $.getJSON('http://api.soundcloud.com/tracks.json?consumer_key=' + api_key + '&filter=streamable&order=' + order_by + '&limit=' + items_by_page + '&offset=' + offset + minlength + '&tags=' + $("#search input").val() +'&callback=?', function(data) {
       // hide the loader
       $("#loader").hide();
       
@@ -136,6 +137,15 @@ var init_search = function (){
       break;
     case "long":
       minutes_min = 40;
+      break;
+  }
+  
+  switch( $('select[name$="order"]').val() ){
+    case("time"):
+      order_by = "created_at";
+      break;
+    case("hotness"):
+      order_by = "hotness";
       break;
   }
   

@@ -100,6 +100,20 @@ label{
   top: 5px;
 }
 
+.search_options label{
+  clear: both;
+  display: block;
+  margin: 10px auto;
+  width: 50%;
+}
+
+.search_options label select{
+  display: block;
+  float: right;
+  margin-top: -4px;
+  width: 140px;
+}
+
 #toggler a{
   background: #ebebeb;
   padding: 3px;
