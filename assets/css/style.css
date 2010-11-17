@@ -93,13 +93,11 @@ label{
 }
 
 #toggler{
-  display: none;
   font-size: 10px;
   position: absolute;
   right: 4px;
   text-transform: uppercase;
   top: 5px;
-  visibility: hidden;
 }
 
 #toggler a{

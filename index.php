@@ -20,6 +20,16 @@
       <div id="search">
         <form>
           <label id="tag_search">Tag: <input type="text" value="" /></label>
+          <div id="toggler"><a href="#">Options</a></div>
+          <div class="search_options">
+          <label>Minimum duration:
+          <select name="min_duration">
+          <option value="short">Short ( > 5 min )</option>
+          <option value="medium">Medium ( > 20 min )</option>
+          <option value="long">Long ( > 40 min )</option>
+          </select>
+          </label>
+          </div>
         </form>
       </div>
       <div id="tags"><a href="#">2010</a> <a href="#">afrobeat</a> <a href="#">ambient</a> <a href="#">blues</a> <a href="#">breaks</a> <a href="#">chill</a> <a href="#">downbeat</a> <a href="#">drum & bass</a> <a href="#">dub</a> <a href="#">dubstep</a> <a href="#">electronic</a> <a href="#">folk</a> <a href="#">funk</a> <a href="#">hiphop</a> <a href="#">instrumental</a> <a href="#">jazz</a> <a href="#">mashup</a> <a href="#">minimal</a> <a href="#">ragga</a> <a href="#">reggae</a> <a href="#">rock</a> <a href="#">soul</a> <a href="#">techno</a></div>
