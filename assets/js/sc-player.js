@@ -227,11 +227,9 @@
         var index = 0,
             playerObj = {node: $player, tracks: []},
             loadUrl = function(link) {
-              
               $.getJSON(scApiUrl(link.url, apiKey), function(data) {
                 // log('data loaded', link.url, data);
                 index += 1;
-                console.log(data);
                 if(data.tracks){
                   // log('data.tracks', data.tracks);
                  // playerObj.tracks = playerObj.tracks.concat(data.tracks);
@@ -242,7 +240,10 @@
                   data.permalink_url = link.url;
                   // if track, add to player
                   playerObj.tracks = [data];
-                  play(data);
+                  //play(data);
+                  //
+                  $player.removeClass("sc-player-loading");
+                  updateTrackInfo( $player, data);
                   onPlay($player);
                   //playerObj.tracks.push(data);
                 }else if(data.username){
@@ -267,8 +268,10 @@
         // update current API key
         apiKey = key;
         // update the players queue
-        players.push(playerObj);
+        //players.push(playerObj);
+        players = [playerObj];
         // load first tracks
+        $player.addClass("sc-player-loading");
         loadUrl(links[index]);
       },
       artworkImage = function(track, usePlaceholder) {
@@ -328,6 +331,8 @@
         }else{
           currentUrl = url;
           // log('will load', url);
+          audioEngine.pause();
+          
           audioEngine.load(track, apiKey);
           autoPlay = true;
         }
@@ -500,6 +505,7 @@
   
   // stop all players, might be useful, before replacing the player dynamically
   $.scPlayer.setTrack = function(player, target) {
+    $.scPlayer.stopAll();
     var opts = player.data("opts");
     var links = $.map($(target), function(val) { return {url: val.href, title: val.innerHTML}; });
     var link = links[0];

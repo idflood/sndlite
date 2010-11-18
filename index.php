@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>(( sndlite ))</title>
-    <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="assets/js/soundcloud.player.api.js"></script>
     <script type="text/javascript" charset="utf-8" src="assets/js/sc-player.js"></script>
     <script type="text/javascript" charset="utf-8" src="assets/js/main.js"></script>

@@ -61,12 +61,12 @@ $(document).ready(function() {
   site_ready();
 });
 
-$(document).bind('soundcloud:onMediaEnd', function(event, data) {
-  next_track();
+$(document).bind('scPlayer:onMediaPlay', function(event, data) {
+  //next_track();
+  //console.log( data );
 });
-$(document).bind('soundcloud:onPlayerReady', function(event, data) {
-  $("#player").animate({height: "90px"}, 500);
-});
+
+
 $(document).bind('soundcloud:onPlayerError', function(event, data) {
   if( is_ready == false ){
     is_ready = true;
@@ -91,15 +91,12 @@ var site_ready = function () {
 var next_track = function() {
   var $current = $(".selected", "#playlist");
   var $next = $current.next();
-  if( $next[0] ){
-    $("li", "#playlist").removeClass("selected");
-    $next.addClass("selected");
-    //var player = soundcloud.getPlayer('yourPlayerId');
-    //player.api_load($("a", $next).attr("href"));
+  if( $next.length != 0 ){
+    $("a", $next ).click();
   }else{
     page_index++;
     is_waiting_next = true;
-    loadNextPage();
+    load_next_page();
   }
 }
 

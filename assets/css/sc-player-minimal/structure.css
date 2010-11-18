@@ -1,6 +1,6 @@
 .sc-player{
   width: 100%;
-  height: 60px;
+  height: 138px;
   position: relative;
   margin: 20px 0;
 }
@@ -14,7 +14,12 @@
 /* Artworks */
 
 .sc-player .sc-artwork-list{
-  display: none;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  right: 0px;
+  top: 9px;
+  font-size: 0;
 }
 
 .sc-player .sc-artwork-list li{
@@ -25,6 +30,9 @@
 .sc-player .sc-artwork-list li.active{
   list-style-type: none;
   display: block;
+  width: 70px;
+  height: 70px;
+  
 }
 
 .sc-player .sc-artwork-list li img, .sc-player .sc-artwork-list li div{
@@ -37,15 +45,16 @@
 
 .sc-player .sc-controls{
   position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 8px;
+  width: 30px;
+  height: 96px;
+  top: 92px;
+  left: 5px;
 }
 
 .sc-player .sc-controls a{
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .sc-player .sc-controls a.sc-play, .sc-player .sc-controls a.sc-pause{
@@ -68,16 +77,17 @@
 
 .sc-scrubber {
   position: absolute;
-  left: -5000px;
+  display: block;
+  left: 45px;
   bottom: 10px;
   height: 40px;
-  width: 95.5%;
+  width: 93.5%;
 }
-
+/*
 .sc-player:hover .sc-scrubber, .sc-player.playing .sc-scrubber {
   display: block;
   left: 45px;
-}
+}*/
 
 
 
@@ -95,7 +105,7 @@
 
 .sc-scrubber .sc-time-indicators{
   position: absolute;
-  right: 0;
+  left: 4px;
   top: -20px;
 }
 
@@ -104,12 +114,8 @@
 /* Track listings*/
 
 .sc-player ol.sc-trackslist{
-  position: absolute;
-  float: left;
-  width: 92%;
-  height: 100%;
-  left: 45px;
-  overflow: auto;
+  display: none;
+  visibility: hidden;
 }
 
 .sc-player ol.sc-trackslist li{
@@ -119,44 +125,39 @@
   margin: 5px;
   padding: 5px;
   list-style: none;
+  font-size: 12px;
+  font-weight: light;
 }
 
 /* Track info*/
 
 .sc-player .sc-info{
-  position: absolute;
-  top: 10px;
-  left: -5000px;
-  width : 200px;
+  position: relative;
+  top: 16px;
+  /*left: -5000px;*/
+  width : 490px;
   padding: 5px;
-  height: 450px;
+  height: 42px;
   z-index: 500;
-  margin-left: -40px;
+  margin-left: 46px;
 }
 
-.sc-player .sc-info.active{
-  left: 25%;
-  top: 5%;
+.sc-info h3{
+  margin-bottom: 4px;
+}
+.sc-info h4{
+  margin-top: 0px;
 }
 
-
-.sc-player .sc-info-toggle{
-  position: absolute;
-  top: 10px;
-  left: 10px;
+.sc-info p{
   display: none;
+  visibility: hidden;
 }
 
-.sc-player .sc-info-toggle.active{
-  left: -5000px;
+.sc-info-close, .sc-info-toggle{
+  display: none;
+  visibility: hidden;
 }
-
-.sc-player .sc-info-close{
-  position: absolute;
-  top: 10px;
-  right: 20px;
-}
-
 /* utilities */
 
 .sc-player .hidden {
@@ -169,4 +170,8 @@
   position: fixed;
   top: 2px;
   left: 2px;
+}
+
+.sc-player-loading{
+  opacity: 0.3;
 }

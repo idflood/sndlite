@@ -223,7 +223,9 @@ label{
 
 .sc-player{
   margin-left: 5px;
-  width: 96%;
+  width: 98%;
+  border-bottom: 1px solid #EBEBEB;
+  border-top: 1px solid #EBEBEB;
 }
 
 .loading{

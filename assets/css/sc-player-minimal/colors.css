@@ -1,7 +1,7 @@
 .sc-player {
   font: 12px Arial, sans-serif;
   color: #333;
-  font-size: 1.6em;
+  font-size: 1em;
   line-height: 1.6em;
   font-weight: bold;
   
@@ -45,7 +45,7 @@
 
 .sc-scrubber .sc-played {
   background-color: #000;
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 /* controls */
@@ -81,7 +81,7 @@
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   padding: 2px;
-  font-size: 0.4em;
+  font-size: 0.6em;
   font-weight: normal;
   line-height: 1em;
 }
@@ -109,30 +109,8 @@
 /* Track info*/
 
 .sc-player .sc-info{
-  background: #fff;
+  font-size: 10px;
   opacity: 0.9;
+  line-height: 1em;
 }
 
-.sc-player .sc-info-toggle{
-  background: #fff;
-  color: #003399;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-box-shadow: 1px 1px 4px #ccc;
-  -webkit-box-shadow: 1px 1px 4px #ccc;
-  padding: 4px;
-}
-
-.sc-player .sc-info-toggle:hover{
-  background: #003399;
-  color: #eee;
-}
-
-.sc-player .sc-info-close{
-  background: #003399;
-  color: #fff;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  padding: 2px 4px;
-  font-weight: bold;
-}
